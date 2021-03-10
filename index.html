@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .mid {
+            width: 100%;
+            margin-left: auto;
+            text-align: center;
+            margin-top: 150px;
+
+        }
+        #up {
+            border-left: 0;
+            border-right: 0;
+            border-style: dashed;
+            border-color: darkgrey;
+            background-color:lightgray;
+        }
+        #text {
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 150px;
+            font-style: italic;
+            background-color:darkgrey;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #text2 {
+            font-family:"Microsoft YaHei";
+            font-size: 20px;
+            font-style: inherit;
+
+        }
+        #an_niu {
+            border: none;
+            text-align: center;
+            background-color: dodgerblue;
+            font-size: 15px;
+            padding: 15px 32px;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+    <body style="margin: 0;">
+        <div id = 'up' class="mid">
+            <p id="text">短链接生成器</p>
+        </div>
+        <div id = 'url' >
+            
+                <div style="width: 600px; display: block;position:absolute;left: 50%;right: 50%; margin-left: -300px;">
+                    <form action="/get_short_url" method="POST">
+                    <span id = "text2" style="margin-bottom: 20px;">黏贴超长链接</span><br>
+                    <input type="text" style="width: 780px; height: 30px;top: 20px;" name="url"><br>
+                    <button style="margin-top: 5px;" id = "an_niu" >提交</button>
+                    </form>
+                    {%if short_url%}
+                    <div style="margin-top: 5px;">
+                        <span>生成的短链:</span>
+                        <a href="{{ short_url }}">{{ short_url }}</a>
+                    </div>
+                    {%endif%}
+                
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>
